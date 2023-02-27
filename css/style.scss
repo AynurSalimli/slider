@@ -3,13 +3,17 @@ body {
     display: grid;
     place-items: center;
   }
+  .space{
+    height: 20vh;
+   
+  }
   
   .slider {
     width: 100%;
     max-width: 800px;
     height: 350px;
     position: relative;
-    overflow: hidden;  
+    overflow: hidden;   
     border-radius: 15px;
   }
   
@@ -19,6 +23,11 @@ body {
     height: 350px;
     position: absolute;
     transition: all 0.5s;
+
+    &:nth-child(1){
+      z-index: 9;
+    }
+    
   }
   
   .slide img {
@@ -47,9 +56,133 @@ body {
   .btn-prev {
     top: 45%;
     left: 2%;
+    z-index: 19;
   }
   
   .btn-next {
     top: 45%;
     right: 2%;
+    z-index: 19;
   }
+
+
+  // #region second slider
+  
+
+  .second--slider {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;   
+  }
+  
+  .second--slide {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    position: absolute;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row ;
+    &:nth-child(1){
+      z-index: 9;
+    }
+    
+  }
+  
+  .second--slide img {
+    width: calc(95%/3);
+
+    gap: 10px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .second--btn-prev {
+    top: 45%;
+    left: 2%;
+    z-index: 19;
+  }
+  
+  .second--btn-next {
+    top: 45%;
+    right: 2%;
+    z-index: 19;
+  }
+  
+  // #endregion second slider
+
+
+
+    // #region third slider
+  
+
+    .third--slider {
+      
+      width: 100%;
+      max-width: 800px;
+      height: 350px;
+      position: relative;
+      overflow: hidden;   
+      border-radius: 10px;
+    }
+    
+    .third--slide {
+      width: 100%;
+      max-width: 800px;
+      height: 350px;
+      position: absolute;
+      transition: all 0.5s;
+  
+      &:nth-child(1){
+        z-index: 9;
+      }
+      
+    }
+    
+    .third--slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .third-btn-prev {
+      top: 45%;
+      left: 2%;
+      z-index: 19;
+    }
+    
+    .third-btn-next {
+      top: 45%;
+      right: 2%;
+      z-index: 19;
+    }
+
+    .dots{
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 99999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .dot{
+        cursor: pointer;
+        height: 10px ;
+        border-radius: 50%;
+        width: 10px;
+        background-color: rgba(255, 166, 0, 0.764);
+        &.active{
+          background-color: orange;
+          transform: scale(1.2);
+        }
+      }
+    }
+    
+    // #endregion second slider
+  
